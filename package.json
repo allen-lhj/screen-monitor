@@ -1,8 +1,8 @@
 {
   "name": "screen-monitor",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -11,6 +11,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build"
   },
+
   "dependencies": {
     "bin-datav": "^0.2.0",
     "echarts": "^5.6.0",
@@ -36,5 +37,11 @@
     "vite-plugin-vue-devtools": "^7.7.7",
     "vitest": "^3.2.4",
     "vue-tsc": "^2.2.10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
