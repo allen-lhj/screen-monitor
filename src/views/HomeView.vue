@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BasicInfo from '@/components/BasicInfo/index.vue'
 import { useDrawEffect } from '@/hook/useDraw'
 import { useTimeDisplay } from '@/hook/useTimeDisplay'
 
@@ -34,7 +35,9 @@ onUnmounted(() => {
       </div>
       <div class="detail-content">
         <div class="left-section">
-          <div class="basic-info" />
+          <div class="basic-info">
+            <BasicInfo />
+          </div>
           <div class="seven-data" />
         </div>
       </div>
@@ -57,6 +60,7 @@ onUnmounted(() => {
     transform-origin: left top;
     transition: all 0.3s;
     font-family: Arial, 'Microsoft YaHei', '黑体', '宋体', sans-serif;
+
     .dashboard-content {
       display: flex;
       position: relative;
@@ -97,10 +101,9 @@ onUnmounted(() => {
         flex: 1;
         width: 100%;
         height: 100%;
-        background-image: url('../assets/bg.png');
+        background-image: url('@/assets/bg.png');
         background-position: center center;
         background-size: cover;
-
         .left-section {
           display: flex;
           flex-direction: column;
