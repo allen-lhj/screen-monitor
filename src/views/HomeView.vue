@@ -1,52 +1,52 @@
 <script setup lang="ts">
+import { useDrawEffect } from '@/hook/useDraw'
 import { useTimeDisplay } from '@/hook/useTimeDisplay'
-import { useDrawEffect } from '@/hook/useDraw';
+
 const { time, hour } = useTimeDisplay()
 
-
-const { appRef, windowDraw, calcRate, unWindowDraw } = useDrawEffect();
+const { appRef, windowDraw, calcRate, unWindowDraw } = useDrawEffect()
 
 onMounted(() => {
   const screen = document.querySelector('.detail-dashboard-container')
-      ?.parentElement as HTMLElement;
-    screen.style.backgroundColor = '#000';
-    windowDraw();
-    calcRate();
+    ?.parentElement as HTMLElement
+  screen.style.backgroundColor = '#000'
+  windowDraw()
+  calcRate()
 })
 
 onUnmounted(() => {
-    unWindowDraw();
-});
+  unWindowDraw()
+})
 </script>
 
 <template>
-  <div class="detail-dashboard-container" ref="appRef">
+  <div ref="appRef" class="detail-dashboard-container">
     <!-- content -->
-     <div class="dashboard-content">
+    <div class="dashboard-content">
       <div class="header">
-      <div class="title-box">
-        个人监控系统
+        <div class="title-box">
+          个人监控系统
+        </div>
+        <div class="time text-white">
+          {{ time }}
+          <span class="text-lg font-bold ml-2">{{ hour }}</span>
+        </div>
       </div>
-      <div class="time text-white">
-        {{ time }}
-        <span class="text-lg font-bold ml-2">{{ hour }}</span>
+      <div class="detail-content">
+        <div class="left-section">
+          <div class="basic-info" />
+          <div class="seven-data" />
+        </div>
       </div>
     </div>
-    <div class="detail-content">
-      <div class="left-section">
-        <div class="basic-info"></div>
-        <div class="seven-data"></div>
-      </div>
-     </div>
+    <div class="center-section" />
+    <div class="right-section">
+      <div class="map-section" />
+      <div class="alarm-section" />
+    </div>
   </div>
-  <div class="center-section"></div>
-  <div class="right-section">
-    <div class="map-section"></div>
-    <div class="alarm-section"></div>
-
-  </div>
-</div>
 </template>
+
 <style scoped lang="less">
   .detail-dashboard-container {
     position: absolute;
