@@ -7,6 +7,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "auto-imports.d.ts"],
+  "include": ["env.d.ts", "bin-datav.d.ts", "src/**/*", "src/**/*.vue", "auto-imports.d.ts"],
   "exclude": ["src/**/__tests__/*"]
 }
