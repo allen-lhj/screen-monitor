@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import BasicInfo from '@/components/BasicInfo/index.vue'
+import Map from '@/components/Map/index.vue'
+import PersonDetail from '@/components/PersonDetail/index.vue'
 import { useDrawEffect } from '@/hook/useDraw'
 import { useTimeDisplay } from '@/hook/useTimeDisplay'
 
@@ -40,12 +42,16 @@ onUnmounted(() => {
           </div>
           <div class="seven-data" />
         </div>
+        <div class="center-section">
+          <PersonDetail />
+        </div>
+        <div class="right-section">
+          <div class="map-section">
+            <Map />
+          </div>
+          <div class="alarm-section" />
+        </div>
       </div>
-    </div>
-    <div class="center-section" />
-    <div class="right-section">
-      <div class="map-section" />
-      <div class="alarm-section" />
     </div>
   </div>
 </template>

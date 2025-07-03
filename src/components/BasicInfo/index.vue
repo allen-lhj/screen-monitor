@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import Avatar from '@/assets/images/dashboard/default_avatar.png'
 
 interface StaffInfo {
   name: string
